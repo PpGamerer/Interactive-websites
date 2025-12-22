@@ -1,5 +1,5 @@
 ## Project Name – 8-Puzzle Mini Game Website
-# Description: Interactive 8-puzzle game with drag-and-drop tiles. Solve the puzzle by arranging tiles in order. Each tile has a surprise reward when correctly placed.
+Description: Interactive 8-puzzle game with drag-and-drop tiles. Solve the puzzle by arranging tiles in order. Each tile has a surprise reward when correctly placed.
 
 # Features:
 - Drag-and-drop tiles
