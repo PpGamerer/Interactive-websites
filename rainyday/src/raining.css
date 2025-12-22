@@ -1,0 +1,373 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  font-family: Inter, system-ui, -apple-system, 'Noto Sans', sans-serif;
+  color: #e6eef8;
+  background: linear-gradient(180deg, #071024 0%, #081022 60%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.controls button {
+  margin-left: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 0;
+  background: rgb(52, 79, 106);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.stage {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.rain-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.drop {
+  position: absolute;
+  width: 4px;
+  height: 14px;
+  background: linear-gradient(180deg, #bcdffd, #6da8ff);
+  border-radius: 2px;
+  transform: translateY(0);
+  transition: top 2s linear;
+  opacity: 0.9; /* ฝนหน้าเด่นชัด */
+  z-index: 2;
+}
+
+.umbrella {
+  position: absolute;
+  bottom: 120px;
+  width: 120px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  user-select: none;
+  z-index: 3;
+}
+
+.umbrella:active {
+  cursor: grabbing;
+}
+
+.dog {
+  position: absolute;
+  bottom: 20px;
+  font-size: 44px;
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+
+.dog.wet {
+  filter: brightness(0.6) saturate(1.5);
+}
+
+@keyframes dogRun {
+  0% { bottom: 20px; }
+  100% { bottom: 22px; }
+}
+.dog.run {
+  animation: dogRun 1s steps(2) infinite;
+}
+.hud {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(5, 10, 18, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 4;
+}
+
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(6, 10, 16, 0.85);
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 720px;
+  z-index: 5;
+  text-align: center;
+}
+
+.result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(6, 10, 16, 0.85);
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 850px;
+  z-index: 5;
+  text-align: center;
+  font-size: 17.5px;
+}
+
+.result {
+  background: linear-gradient(180deg, rgba(8, 12, 20, 0.85), rgba(12, 18, 26, 0.9));
+}
+
+.playlist iframe {
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.footer {
+  padding: 12px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.notification-popup {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 350px;
+  background-color: #323232cc;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  z-index: 9999;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  border-radius: 0 0 8px 8px;
+}
+
+.notification-popup p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.notification-popup button {
+  background: #6da8ff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 6px 12px;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.notification-popup button:hover {
+  background-color: #6195e2;
+}
+
+.mail {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.falling-rain {
+  position: fixed;
+  top: -60px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: fallDown 1.5s linear forwards;
+  z-index: 20;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.rain-button {
+  border: none;
+  background: #cde1ff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  padding: 15px;
+  cursor: pointer;
+  margin: 20px auto 0; /* กำหนด margin บนให้เว้นระยะจากข้อความ, auto เพื่อกลางแนวนอน */
+  display: block;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  transition: background-color 0.3s ease;
+}
+.rain-button:hover {
+  background: #a6caff;
+}
+.rain-button img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.cheat-warning {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 100, 100, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  animation: fadeout 2s forwards;
+}
+
+@keyframes fadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  transform: translate(-50%, -50%);
+  background: rgba(6, 10, 16, 0.85);
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 720px;
+  z-index: 5;
+  text-align: center;
+}
+
+.popup button {
+  margin: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 0;
+  background: rgb(52, 79, 106);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.popup2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  transform: translate(-50%, -50%);
+  background: rgba(6, 10, 16, 0.85);
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 720px;
+  z-index: 5;
+  text-align: center;
+}
+
+
+.popup3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3000px;
+  transform: translate(-50%, -50%);
+  background: rgba(6, 10, 16, 0.85);
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 720px;
+  z-index: 5;
+  text-align: center;
+}
+
+.combo-indicator {
+  position: absolute;
+  top: -20px;
+  left: 100%;
+  transform: translateX(-50%);
+  background: #a6caff;
+  color: white;
+  font-weight: bold;
+  padding: 0.4em 0.8em; /* ปรับเป็น em เพื่อให้กลมตามฟอนต์ */
+  border-radius: 999px;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(255, 0, 128, 0.4);
+  animation: popCombo 0.3s ease;
+  z-index: 10;
+}
+
+@keyframes popCombo {
+  0% { transform: translateX(-50%) scale(0.8); opacity: 0; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.dog-meme {
+  animation: memePop 1s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes memePop {
+  0% { transform: translate(-50%, -100%) scale(0.5); opacity: 0; }
+  40% { transform: translate(-50%, -120%) scale(1.2); opacity: 1; }
+  100% { transform: translate(-50%, -100%) scale(1); opacity: 1; }
+}
+
+.angry-meme-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ขนาดปรับได้ตามต้องการ */
+.angry-meme {
+  margin-top: 12px;
+  width: 100px;          /* ปรับขนาดตรงนี้ ถ้าต้องการเล็ก/ใหญ่ */
+  max-width: 80vw;       /* ไม่ให้ล้นจอมือถือ */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  pointer-events: none;  /* ป้องกันภาพขวางการคลิกปุ่มข้างล่าง */
+}
