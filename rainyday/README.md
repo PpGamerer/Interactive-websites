@@ -7,4 +7,4 @@ Description: Interactive website built as a creative project with mini-games and
 
 # Tech Stack: React, Vite, JavaScript, CSS, Web Animations, Web Audio API
 
-# Live Demo: 
+# Live Demo: https://rainyday-demo.vercel.app/
