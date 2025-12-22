@@ -9,6 +9,7 @@ Features:
 - Responsive layout for different screen sizes
 
 Tech Stack: React, Vite, TypeScript, CSS
+
 Live Demo: https://8puzzle-demo.vercel.app/
 
 ## Rainy Day – Website with Mini Games
@@ -19,6 +20,7 @@ Features:
 - Visual & Audio Feedback: Animations, rain effects, and sound to enhance user experience
 
 Tech Stack: React, Vite, JavaScript, CSS, Web Animations, Web Audio API
+
 Live Demo: https://rainyday-demo.vercel.app/
 
 ## Stardew Valley Invitation Mini Game Website
@@ -33,5 +35,6 @@ Features:
 - Visually engaging frontend
 
 Tech Stack: React, Vite, TypeScript, CSS, Web Animations
+
 Live Demo: https://letsplaygame-demo.vercel.app/
 
