@@ -44,7 +44,7 @@ function Invite() {
   "/images/junimos/yellow.png",
   ];
 
-  const myUserId = "Demo"; //Discord user ID 
+  // const myUserId = ""; //Discord user ID 
 
   useEffect(() => {
     const interval = setInterval(() => {
