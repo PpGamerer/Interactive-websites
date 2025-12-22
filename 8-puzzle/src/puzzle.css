@@ -1,0 +1,190 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #333;
+}
+
+.game-header p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tile {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #67c8ff;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tile.empty {
+  background-color: #dfdfdf;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tile:hover {
+  background-color: #4aa8e8;
+}
+
+.tile.correct {
+  background-color: #4CAF50; /* สีเขียว */
+  color: #fff;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-template-rows: repeat(3, 70px);
+  gap: 10px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.game-board button {
+  background-color: #67c8ff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  display: flex;              
+  justify-content: center;     
+  align-items: center;         
+  text-align: center;          
+}
+
+
+.game-board button:disabled {
+  background-color: #eee;
+  cursor: default;
+}
+
+.game-board button:hover:not(:disabled) {
+  background-color: #4aa8e8;
+}
+
+.controls {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.controls button {
+  background-color: #67c8ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #4aa8e8;
+}
+
+.info-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.info-box {
+  padding: 14px 14px;
+  background: #f7f7fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  min-width: 110px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 32px 36px 24px 36px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 280px;
+}
+.popup-box h2 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 16px;
+}
+.popup-box p {
+  margin-top: 0;
+  font-size: 16px;
+}
+.popup-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.popup-actions button {
+  background: #67c8ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.popup-actions button:hover {
+  background: #4aa8e8;
+}

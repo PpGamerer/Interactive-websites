@@ -1,0 +1,123 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.flower-box {
+  background-color: #fff8dc;
+  border: 2px solid #ffd586;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  user-select: none;
+}
+
+.flower-box h2 {
+  font-size: 24px;
+  color: #8B5E3C;
+  margin-bottom: 10px;
+}
+
+.flower-box img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.flower-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.flower-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+}
+
+.flower-petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  transform-origin: center center;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.flower-petal.clicked {
+  opacity: 0.5;
+}
+
+.result {
+  margin-top: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.petal-message {
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: none;    
+  border: none;        
+  padding: 0;           
+  text-align: center;
+  user-select: none;
+  color: #8B5E3C;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.popup-content button {
+  margin-top: 0;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #eba26a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #ffd586;
+}
