@@ -5,7 +5,7 @@ Description: Interactive invitation website themed around Stardew Valley. Users 
 - Three main interactive buttons:
   - Play: redirects to Discord chat
   - Not Play: shows cat GIF with tooltip message following the mouse
-  - Mini-Game Helper: pick-a-petal mini-game that guides users to reveal the surprise message
+  - Mini-Game Helper: pick-a-petal mini-game that guides users to reveal the surprise result
 - Animated falling chicken and other playful animations
 - Surprise message revealed based on user interaction
 - Visually engaging frontend
