@@ -1,5 +1,5 @@
 ## Project Name – Stardew Valley Invitation Mini Game Website
-# Description: Interactive invitation website themed around Stardew Valley. Users play a “pick a petal” mini game to reveal a surprise message.
+Description: Interactive invitation website themed around Stardew Valley. Users play a “pick a petal” mini game to reveal a surprise message.
 
 # Features:
 - Three main interactive buttons:
@@ -12,5 +12,5 @@
 
 # Tech Stack: React, Vite, TypeScript, CSS, Web Animations
 
-# Live Demo: 
+# Live Demo: https://letsplaygame-demo.vercel.app/
 
