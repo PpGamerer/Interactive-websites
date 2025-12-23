@@ -10,7 +10,7 @@ Description: Interactive invitation website themed around Stardew Valley. Users 
 - Surprise message revealed based on user interaction
 - Visually engaging frontend
 
-# Tech Stack: React, Vite, TypeScript, CSS, Web Animations
+# Tech Stack: React, Vite, JavaScript / TypeScript, CSS, Web Animations
 
 # Live Demo: https://letsplaygame-demo.vercel.app/
 

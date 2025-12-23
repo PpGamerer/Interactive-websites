@@ -38,4 +38,4 @@ A simulated mobile phone interface with multiple interactive components:
 
 # Tech Stack: React, Vite, JavaScript / TypeScript, CSS, React Router, Web Animations API, Web Audio API, Spotify Embed
 
-# Live Demo: 
+# Live Demo: https://hbdweb-demo.vercel.app/
