@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import "./raining.css";
 import confetti from "canvas-confetti";
 
-export default function AmegaFuttaBirthday() {
+export default function Rainyday() {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
   const [timeLeft, setTimeLeft] = useState(23);
