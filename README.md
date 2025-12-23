@@ -37,8 +37,8 @@ A simulated mobile phone interface with multiple interactive components:
   - Birthday music featured in the rhythm game
   - Sound effects (SFX) used across multiple pages to enhance interaction feedback
 
-User Flow
-The website follows a progression-based flow where each mini-game unlocks the next stage:
+User Flow: The website follows a progression-based flow where each mini-game unlocks the next stage:
+
 / (Rhythm Game) -> /boxhunt (Phone Simulator & Box Hunt) -> /punch (Punch-the-Box Game with Golden Fist) -> /letter (Final Surprise Letter)
 
 Tech Stack: React, Vite, JavaScript / TypeScript, CSS, React Router, Web Animations API, Web Audio API, Spotify Embed
