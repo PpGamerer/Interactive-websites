@@ -1,10 +1,10 @@
 # Personal Projects – Interactive Mini-game Websites
 
 ## 8-Puzzle
-Description: Interactive 8-puzzle game with drag-and-drop tiles. Solve the puzzle by arranging tiles in order. Each tile has a surprise reward when correctly placed.
+Description: Interactive 8-puzzle game where players click numbered tiles to move them into the empty space. Solve the puzzle by arranging tiles in order, with a surprise reward revealed when each tile is correctly placed.
 
 Features:
-- Drag-and-drop tiles
+- Click tiles to move them into the empty space
 - Win detection with special surprises for each tile
 - Responsive layout for different screen sizes
 
