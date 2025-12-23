@@ -1,0 +1,307 @@
+body, html, #root {
+  margin: 0;
+  height: 100%;
+  background: #e0e0e0;
+  font-family: sans-serif;
+  
+}
+
+/* มือถือกึ่งกลางจอ */
+.phone-container {
+  position: fixed;  /* fix ตำแหน่งบนหน้าจอ */
+  top: 50%;         /* วางไว้ตรงกลางแนวตั้ง */
+  left: 50%;        /* วางไว้ตรงกลางแนวนอน */
+  transform: translate(-50%, -50%); /* shift กลับมาครึ่งขนาดตัวเอง เพื่อให้กลางเป๊ะ */
+  
+  /* เพิ่มขนาดมือถือที่เหมาะสม */
+  width: 360px;   /* หรือขนาดมือถือที่ต้องการ */
+  height: 680px;  /* หรือขนาดมือถือที่ต้องการ */
+  
+  background: #fff;  /* สีพื้นหลัง */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* พื้นหลังมือถือ */
+.phone-shell {
+  width: 360px;
+  height: 680px;
+  border: 10px solid #333;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: auto;
+  background: url('/images/cat_punch.png') center/cover no-repeat; /* หรือสีพื้น */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  font-family: sans-serif;
+  position: relative;
+}
+
+/* แถบเวลา/แบตเตอรี่ */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: white;
+  padding: 0 12px;
+  height: 48px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  user-select: none;
+  position: relative;
+  z-index: 1000;
+}
+
+.status-bar .time {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.status-bar .status-icons > span {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+/* พื้นที่ไอคอน */
+.home-screen {
+  flex: 1;
+  padding: 20px 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ตารางแอป */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ปุ่มแอป */
+.app-icon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s;
+}
+
+.app-icon-button:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.6); 
+}
+
+.app-icon-button .emoji {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.app-icon-button .label {
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.home-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #444;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* draggable popup */
+.draggable-window-chat {
+  width: 350px;
+  height: 490px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.draggable-window-photos {
+  width: 320px;
+  height: 360px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.draggable-window-note {
+  width: 400px;
+  height: 400px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.draggable-window-box {
+  width: 500px;
+  height: 550px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.draggable-window-status {
+  width: 380px;
+  height: auto;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.draggable-window-music {
+  width: 400px;
+  height: 465px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.draggable-window-hbd {
+  width: 520px;
+  max-height: fit-content;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 100000;
+}
+
+.window-header {
+  background: #4287f5;
+  color: white;
+  padding: 8px 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  cursor: grab;
+  border-radius: 10px 10px 0 0;
+  align-items: center;
+}
+
+.window-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
+}
+
+.window-content {
+  padding: 12px;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+/* note */
+.note-textarea {
+  width: 100%;
+  height: calc(100% - 7px);
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  resize: none;
+  font-size: 14px;
+}
+
+@keyframes slowZoomIn {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

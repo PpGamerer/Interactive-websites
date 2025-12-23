@@ -1,0 +1,329 @@
+.punch-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: #fff3e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.punch-box {
+  position: relative;
+  border: 3px solid #f08a5d;
+  padding: 30px 50px;
+  border-radius: 15px;
+  background-color: #fff3e0;
+  text-align: center;
+  z-index: 10;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+/* .leaderboard-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+} */
+
+.paper-shield {
+  position: absolute;
+  top: 44%;      /* กึ่งกลางแนวตั้ง */
+  left: 50%;     /* กึ่งกลางแนวนอน */
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 5;
+}
+
+.unlock-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.unlock-message h1 {
+  font-size: 27px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #EFBF04;
+}
+
+.unlock-message p {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: #333; /* สีเข้ม */
+  margin-top: 0;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.unlock-message h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.unlock-message h4 {
+  margin-bottom: 0;
+}
+.unlock-message ol {
+  margin-top: 0;
+}
+
+.elapsed-time {
+  font-weight: 700;
+  color: #ff783e; /* สีทอง */
+  font-size: 20px;
+}
+
+.gift-box {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+.gift-box:hover,
+.punch-button:hover,
+.scissor-button:hover,
+.golden-punch-button:hover{
+  transform: scale(1.05);
+}
+
+.gift-box-broken {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.punch-button,
+.scissor-button,
+.golden-punch-button {
+  border: none;
+  background: #f08a5d;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  transition: background-color 0.3s ease;
+}
+
+.punch-button:hover:not(:disabled),
+.scissor-button:hover,
+.golden-punch-button:hover {
+  background-color: #fa765f;
+}
+
+.punch-button img,
+.scissor-button img,
+.golden-punch-button img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.falling-fist {
+  position: fixed;
+  top: -60px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: fallDown 1.5s linear forwards;
+  z-index: 20;
+}
+
+.falling-scissor {
+  position: fixed;
+  top: -60px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: fallDown 1.5s linear forwards;
+  z-index: 20;
+}
+
+.falling-fist.golden {
+  pointer-events: auto;
+  animation: fallDown 3s linear forwards;
+  cursor: pointer; 
+  z-index: 9999; 
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+@keyframes punch-press {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(-15deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes shake-weak {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(3px, -2px); }
+}
+
+@keyframes shake-medium {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 3px); }
+  50% { transform: translate(5px, -3px); }
+  75% { transform: translate(-5px, 3px); }
+}
+
+@keyframes shake-strong {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-8px, 4px) rotate(-2deg); }
+  40% { transform: translate(8px, -4px) rotate(2deg); }
+  60% { transform: translate(-6px, 3px) rotate(-1deg); }
+  80% { transform: translate(6px, -3px) rotate(1deg); }
+}
+
+.shake-weak {
+  animation: shake-weak 0.2s ease-in-out;
+}
+
+.shake-medium {
+  animation: shake-medium 0.25s ease-in-out;
+}
+
+.shake-strong {
+  animation: shake-strong 0.3s ease-in-out;
+}
+
+.hp-bar-container {
+  width: 200px; /* หรือขนาดที่เหมาะสม */
+  height: 20px;
+  border: 2px solid #aaa;
+  background-color: #eee;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.hp-bar-fill {
+  height: 100%;
+  background-color: rgb(255, 71, 71);
+  transition: width 0.3s ease-in-out;
+}
+
+.low-hp-blink {
+  background-color: #f44336; 
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.gift-box-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.combo-indicator {
+  position: absolute;
+  top: -25px;
+  left: 120%;
+  transform: translateX(-50%);
+  background: #ff6b6b;
+  color: white;
+  font-weight: bold;
+  padding: 0.4em 0.8em; /* ปรับเป็น em เพื่อให้กลมตามฟอนต์ */
+  border-radius: 999px;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(255, 0, 128, 0.4);
+  animation: popCombo 0.3s ease;
+  z-index: 10;
+}
+
+@keyframes popCombo {
+  0% { transform: translateX(-50%) scale(0.8); opacity: 0; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.falling-cat {
+  position: absolute;
+  width: 60px;
+  z-index: 100;
+  animation: fadeGrowFade 2s ease-in-out forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeGrowFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+.gift-box-broken {
+  animation: boomFadeIn 0.3s ease forwards;
+  opacity: 0;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+@keyframes boomFadeIn {
+  to {
+    opacity: 1;
+  }
+}

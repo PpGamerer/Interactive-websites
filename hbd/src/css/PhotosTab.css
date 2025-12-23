@@ -1,0 +1,115 @@
+/* container แบบ grid 3 รูปต่อแถวเหมือน iPhone photos */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 รูปต่อแถว */
+  gap: 2px;
+  padding: 2px;
+  max-height: 100%; 
+  overflow-y: auto;        /* เลื่อนแนวตั้งได้ */
+  box-sizing: border-box;
+  
+}
+
+/* ปุ่มห่อรูปเพื่อให้กดได้ และไม่มี outline ที่แปลก */
+.gallery-image-button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+
+  display: block;           /* ทำให้บล็อกเต็มพื้นที่ */
+  width: 100%;              /* ให้เต็มช่องที่ parent กำหนด */
+  aspect-ratio: 1 / 1;      /* ให้เป็นสี่เหลี่ยมจัตุรัส */
+  overflow: hidden;         /* ตัดส่วนเกินถ้ามี */
+  border-radius: 8px;       /* โค้งมุมเท่ารูป */
+}
+
+/* รูปสี่เหลี่ยมจัตุรัสเต็มพื้นที่ช่อง */
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* ให้เป็นสี่เหลี่ยมจัตุรัส */
+  object-fit: cover;       /* รูปเต็มกรอบ ไม่เบี้ยว */
+  border-radius: 0;
+  user-select: none;
+  display: block;
+}
+
+/* modal พื้นหลังมืด */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-image {
+  max-width: 80vw;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-caption {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* ปุ่มปิด */
+.modal-close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ปุ่มก่อนหน้า */
+.modal-prev-button {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 4px 12px;
+}
+
+/* ปุ่มถัดไป */
+.modal-next-button {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 4px 12px;
+}
