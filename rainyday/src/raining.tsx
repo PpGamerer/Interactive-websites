@@ -491,7 +491,7 @@ useEffect(() => {
         {!gameStarted && !gameFinished && (
           <div className="intro">
             <p>
-              t's raining right now, but the pup wants to go for a walk! <br>
+              It's raining right now, but the pup wants to go for a walk! <br>
               </br>The kind owner is holding an umbrella to keep the little one dry. ☂️
             </p>
           <div className="controls">
