@@ -6,6 +6,6 @@ Description: Interactive 8-puzzle game with drag-and-drop tiles. Solve the puzzl
 - Win detection with special surprises for each tile
 - Responsive layout for different screen sizes
 
-# Tech Stack: React, Vite, TypeScript, CSS
+# Tech Stack: React, Vite, JavaScript / TypeScript, CSS
 
 # Live Demo: https://8puzzle-demo.vercel.app/

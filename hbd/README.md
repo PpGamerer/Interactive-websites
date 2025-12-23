@@ -1,60 +1,41 @@
-# Birthday website for พี่น้ำผึ้ง 🍯🎂✨
-- เว็บไซต์นี้สร้างขึ้นเพื่อเป็นของขวัญวันเกิด และเพื่อฝึกฝนการทำเว็บไซต์(และมินิเกมนิดหน่อย)
+## Birthday Website – Mini Game Collection
+Description: Interactive birthday-themed website built as a creative frontend project. The application is structured as a multi-route single-page app featuring multiple mini-games with progression-based mechanics, animations, music, and sound effects to create an engaging and immersive user experience.
 
-- developing time: 30 MAY - 2 JUN
+# Main Routes & Features:
+1. / – Rhythm Game
+  - Music-based rhythm mini game
+  - Birthday-themed background music
+  - Timing interaction with visual feedback synchronized to music
+2. /boxhunt – Phone Simulator
+A simulated mobile phone interface with multiple interactive components:
+  - Chat
+    - Short NPC-style chatting experience
+    - Visual novel–inspired chat UI (demo content)
+  - BoxHunt
+    - Interactive box-hunting mini game
+    - Hidden interactions and exploratory gameplay
+  - Note
+    - In-app notes component for narrative or hints
+  - Photos
+    - Image gallery integrated into the phone UI
+  - Music
+    - Embedded Spotify playlist (UI integration)
+  - Reminder Widget
+    - Static calendar-style widget
+    - Highlighted birthday date used as a visual hint for box puzzle codes
+3. /punch – Punch-the-Box Game
+  - Action-based mini game with progression-based mechanics
+  - Punch boxes until their HP is depleted
+  - Unlock and search for the Golden Fist to continue progression
+  - Punch sound effects and animated visual feedback
+4. /letter – Surprise Letter
+  - Final reveal page unlocked only after completing the punching game progression
+  - Displays a surprise message as the narrative conclusion
 
+5. Audio Experience
+  - Birthday music featured in the rhythm game
+  - Sound effects (SFX) used across multiple pages to enhance interaction feedback
 
-# React + TypeScript + Vite
+# Tech Stack: React, Vite, JavaScript / TypeScript, CSS, React Router, Web Animations API, Web Audio API, Spotify Embed
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+# Live Demo: 
