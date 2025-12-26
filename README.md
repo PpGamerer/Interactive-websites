@@ -69,6 +69,7 @@ Live Demo: https://rainyday-demo.vercel.app/
 
 ## Stardew Valley Invitation
 Description: Interactive invitation website themed around Stardew Valley. Users play a “pick a petal” mini game to reveal a surprise message.
+
 Features:
 - Three main interactive buttons:
   - Yes: redirects to Discord chat
