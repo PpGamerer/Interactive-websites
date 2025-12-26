@@ -336,7 +336,7 @@ export default function Punch() {
           <>
           <div className="unlock-message">
             <br></br>
-            <h1> Unlock Golden Punch!</h1>
+            <h1> Unlock Golden Fist!</h1>
             <h4>Time: <span className="elapsed-time">{formattedTime}</span></h4>
             {/* animation แมวโผล่ */}
               {fallingCats.map((cat) => (
@@ -363,7 +363,7 @@ export default function Punch() {
             className="gift-box-broken"
           />
           )}
-          <p>Find the Golden Punch</p>
+          <p>Find the Golden Fist</p>
           {isUnlock && (
              <button
               className={`golden-punch-button ${goldenButtonActive ? "active" : ""}`}
