@@ -703,7 +703,7 @@ useEffect(() => {
       </main>
 
       <footer className="footer">
-        <p>from 0</p>
+        <p>DEMO</p>
       </footer>
     </div>
   );
