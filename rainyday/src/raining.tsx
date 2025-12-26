@@ -570,11 +570,8 @@ useEffect(() => {
           <div className="popup3">
           <div className="playlist">
         <h3>🎵 Playlist for You🎵</h3>
-       <p>
-        (Spotify embeded playlist)<br/>
-        </p>
         <iframe
-          src=""
+          src="https://open.spotify.com/embed/playlist/7hjOK2B01OdN96Nw5lKIoA?utm_source=generator&theme=0"
           width="100%"
           height="405"
           allow="encrypted-media"

@@ -534,10 +534,9 @@ export default function Phone() {
             setOpenPopups((prev) => prev.filter((t) => t !== "music"))
           }
         >
-          <p>(Spotify Embbeded Playlist)</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <iframe
-              src={""}
+              src={"https://open.spotify.com/embed/playlist/7hjOK2B01OdN96Nw5lKIoA?utm_source=generator&theme=0"}
               width="100%"
               height="400"
               frameBorder="0"
